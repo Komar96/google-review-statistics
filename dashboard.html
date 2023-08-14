@@ -1,0 +1,158 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<body>
+<div class="container" id="loading" style="display: none;">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-center">
+      <div class="loader"></div>
+      Getting data from apify..
+    </div>
+  </div>
+</div>
+
+  <!-- REPUTATION SCORE -->
+  <div class="container" style="border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+    <h4>What parameters impact the Reputation score?</h4>
+    <div class="row">
+      <div class="col-md-4 text-center">
+            <!-- top description -->
+            <div class="row d-flex justify-content-center text-center">              
+              <div class="status-message" id="reviews-rating-label">
+              </div>
+              <h3>
+                <div id="reviews-rating">
+                </div>
+              </h3>
+            </div>
+            <p style="font-weight: 600;color: #C3C5C5;">Overall</p>
+            <!-- bar -->
+            <div class="row d-flex justify-content-center text-center">
+              <div class="progress progress-bar-vertical">
+                <div class="progress-bar" role="progressbar" id="reviews-rating-bar" aria-valuenow="40" aria-valuemin="30" aria-valuemax="1000" style="height:0%">
+                  <span style="color: black;" id="reviews-rating-percentage"></span>
+                </div>
+              </div>
+            </div>
+            <!-- bottom description -->
+            <div class="row d-flex justify-content-center text-center" style="margin-top: 20px;">
+              <div class="review-type" style="width: 160px;">
+                <h6>
+                  Reviews Rating
+                </h6>
+                <p style="font-weight: 400;color: #404554;font-size: 12px;opacity: 0.8;">
+                  Reputation score provides insights into customer satisfaction, reflects publi...
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center text-center">
+                <a href="" style="text-decoration: underline;"> View details</a>
+            </div>
+      </div>
+
+      <div class="col-md-4 text-center">
+          <!-- top description -->
+          <div class="row d-flex justify-content-center text-center">
+            <div class="status-message" id="reviews-number-label">
+            </div>
+            <h3>
+              <div id="reviews-number">
+              </div>
+            </h3>
+          </div>
+          <p style="font-weight: 600;color: #C3C5C5;">Overall</p>
+          <!-- bar -->
+          <div class="row d-flex justify-content-center text-center">
+            <div class="progress progress-bar-vertical">
+              <div class="progress-bar" role="progressbar" id="reviews-number-bar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1000" style="height:0%">
+                <span style="color: black;" id="reviews-number-percentage"></span>
+              </div>
+            </div>
+          </div>
+          <!-- bottom description -->
+          <div class="row d-flex justify-content-center text-center" style="margin-top: 20px;">
+            <div class="review-type" style="width: 160px;">
+              <h6>
+                Reviews Number
+              </h6>
+              <p style="font-weight: 400;color: #404554;font-size: 12px;opacity: 0.8;">
+                Reviews quantity is crucial as it provides representative feedback, demonstrates...
+              </p>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center text-center">
+              <a href="" style="text-decoration: underline;"> View details</a>
+          </div>
+      </div>
+
+      <div class="col-md-4 text-center">
+            <!-- top description -->
+            <div class="row d-flex justify-content-center text-center">
+                <div class="status-message" id="reviews-last-month-label">
+                </div>
+              <h3>
+                <div id="reviews-last-month">
+                </div>
+              </h3>
+            </div>
+            <p style="font-weight: 600;color: #C3C5C5;">Overall</p>
+            <!-- bar -->
+            <div class="row d-flex justify-content-center text-center">
+              <div class="progress progress-bar-vertical">
+                <div class="progress-bar" role="progressbar" id="reviews-last-month-bar" aria-valuenow="233" aria-valuemin="0" aria-valuemax="1000" style="height: 0%;">
+                  <span style="color: black;" id="reviews-last-month-percentage"></span>
+                </div>
+              </div>
+            </div>
+            <!-- bottom description -->
+            <div class="row d-flex justify-content-center text-center" style="margin-top: 20px;">
+              <div class="review-type" style="width: 160px;">
+                <h6>
+                  Last Month Reviews
+                </h6>
+                <p style="font-weight: 400;color: #404554;font-size: 12px;opacity: 0.8;">
+                  This parameter reflects recent customer feedback, indicates engagement leve...
+                </p>
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center text-center">
+                <a href="" style="text-decoration: underline;"> View details</a>
+            </div>
+      </div>
+    </div>
+  </div>
+
+<!-- LOCATION PERFORMANCE -->
+<div class="container" style="margin-top: 50px; border: 1px solid #000000; padding: 20px; border-radius: 12px;">
+  <h4>What is my locations performance?</h4>
+  <!-- header -->
+  <div class="row" style="margin-top: 30px;">
+    <div class="col-md-6" style="display: flex; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 21" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M3 0.527262C3 0.416755 3.0439 0.310775 3.12204 0.232635C3.20018 0.154494 3.30616 0.110596 3.41667 0.110596H12.5833C12.6938 0.110596 12.7998 0.154494 12.878 0.232635C12.9561 0.310775 13 0.416755 13 0.527262V0.943929H15.0833C15.1938 0.943929 15.2998 0.987828 15.378 1.06597C15.4561 1.14411 15.5 1.25009 15.5 1.3606V3.8606C15.5 4.41313 15.2805 4.94303 14.8898 5.33373C14.4991 5.72444 13.9692 5.94393 13.4167 5.94393H12.7154C12.4176 6.78439 11.9007 7.53008 11.2183 8.10393C10.5358 8.67777 9.71244 9.05896 8.83333 9.2081V11.7773H11.3333C11.4438 11.7773 11.5498 11.8212 11.628 11.8993C11.7061 11.9774 11.75 12.0834 11.75 12.1939V14.6939C11.75 14.8044 11.7061 14.9104 11.628 14.9886C11.5498 15.0667 11.4438 15.1106 11.3333 15.1106H4.66667C4.55616 15.1106 4.45018 15.0667 4.37204 14.9886C4.2939 14.9104 4.25 14.8044 4.25 14.6939V12.1939C4.25 12.0834 4.2939 11.9774 4.37204 11.8993C4.45018 11.8212 4.55616 11.7773 4.66667 11.7773H7.16667V9.2081C6.28756 9.05896 5.46422 8.67777 4.78174 8.10393C4.09926 7.53008 3.5824 6.78439 3.28458 5.94393H2.58333C2.0308 5.94393 1.5009 5.72444 1.11019 5.33373C0.719493 4.94303 0.5 4.41313 0.5 3.8606V1.3606C0.5 1.25009 0.543899 1.14411 0.622039 1.06597C0.700179 0.987828 0.80616 0.943929 0.916667 0.943929H3V0.527262ZM13 4.27726V1.77726H14.6667V3.8606C14.6667 4.19212 14.535 4.51006 14.3005 4.74448C14.0661 4.9789 13.7482 5.1106 13.4167 5.1106H13V4.27726ZM3 1.77726H1.33333V3.8606C1.33333 4.19212 1.46503 4.51006 1.69945 4.74448C1.93387 4.9789 2.25181 5.1106 2.58333 5.1106H3V1.77726Z" fill="#95D197"/>
+        </svg>
+        <h6 style="display: inline-block; margin-left: 10px;" >Highest Reputation Scores</h6>
+    </div>
+    <div class="col-md-6" style="display: flex; align-items: center;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 21" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6667 10.2772C17.6667 5.85882 14.0851 2.27722 9.66675 2.27722C5.24835 2.27722 1.66675 5.85882 1.66675 10.2772C1.66675 14.6956 5.24835 18.2772 9.66675 18.2772C14.0851 18.2772 17.6667 14.6956 17.6667 10.2772ZM9.66675 5.67722C9.82588 5.67722 9.97849 5.74044 10.091 5.85296C10.2035 5.96548 10.2667 6.11809 10.2667 6.27722V11.0772C10.2667 11.2364 10.2035 11.389 10.091 11.5015C9.97849 11.614 9.82588 11.6772 9.66675 11.6772C9.50762 11.6772 9.35501 11.614 9.24248 11.5015C9.12996 11.389 9.06675 11.2364 9.06675 11.0772V6.27722C9.06675 6.11809 9.12996 5.96548 9.24248 5.85296C9.35501 5.74044 9.50762 5.67722 9.66675 5.67722ZM9.66675 14.2772C9.87892 14.2772 10.0824 14.1929 10.2324 14.0429C10.3825 13.8929 10.4667 13.6894 10.4667 13.4772C10.4667 13.265 10.3825 13.0616 10.2324 12.9115C10.0824 12.7615 9.87892 12.6772 9.66675 12.6772C9.45458 12.6772 9.25109 12.7615 9.10106 12.9115C8.95103 13.0616 8.86675 13.265 8.86675 13.4772C8.86675 13.6894 8.95103 13.8929 9.10106 14.0429C9.25109 14.1929 9.45458 14.2772 9.66675 14.2772Z" fill="#F97179"/>
+        </svg> 
+        <h6 style="display: inline-block; margin-left: 10px;" >Lowest Reputation Scores</h6>
+    </div>
+  </div>
+  <div class="row" style="margin: 5px;">
+    <!-- high -->  
+    <div class="col-md-5" id="highest-location-performance">
+    </div>
+    <div class="col-md-1 no-border">
+    </div>
+    <!-- low -->
+    <div class="col-md-5" id="lowest-location-performance">
+    </div>
+  </div>
+</div>
+</body>
+
+<script src="script.js"></script>
