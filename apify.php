@@ -1,5 +1,5 @@
 <?php
-$API_TOKEN = '<YOUR TOKEN>';
+$API_TOKEN = 'apify_api_i4P3aqisZAWKhUDOPgCsVAhmWYD91E2Cb649';
 
 $input = [
     "startUrls" => [
